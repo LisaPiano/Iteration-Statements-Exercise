@@ -44,13 +44,17 @@
             //checking to see if the numbers are the same or different
 
             int num1;
+            int num2;
             Console.WriteLine("Please give me an integer:");
             while (!int.TryParse(Console.ReadLine(), out num1))
             {
                 Console.WriteLine("That was not a number. I need a number. Please try again:");
             }
             Console.WriteLine("Thank you. Now, please give me a second integer:");
-            var num2 = int.Parse(Console.ReadLine());
+            while (!int.TryParse(Console.ReadLine(), out num2))
+            {
+                Console.WriteLine("That was not a number. I need a number. Please try again:");
+            }
 
             if (num1 == num2)
             {
@@ -62,8 +66,13 @@
             }
 
             //Method to see if the numbers are even or odd
+
+            int number;
             Console.WriteLine("Hello again! Please give me a number:");
-            var number = int.Parse(Console.ReadLine());
+            while (!int.TryParse(Console.ReadLine(), out number))
+            { 
+                Console.WriteLine("That was not a number. I need a number. Please try again:");
+            }
             
             if (number % 2 == 0)
             {
@@ -75,8 +84,12 @@
             }
 
             //Method to see if the numbers are positive or negative
+            int num;
             Console.WriteLine("Let's play yet another number game! Please give me one more number:");
-            var num = int.Parse(Console.ReadLine());
+            while (!int.TryParse(Console.ReadLine(), out num))
+            {
+                Console.WriteLine("That was not a number. I need a number. Please try again:");
+            }
 
             if (num > 0)
             {
@@ -91,8 +104,15 @@
                 Console.WriteLine($"Your number must be 0, which is neither positive nor negative!");
             }
 
+
+            //Method to see if the user can vote based on their age
+
+            int age;
             Console.WriteLine("Well, now let's play another game. This game is called CAN YOU VOTE?? So....please enter your age right here:");
-            var age = int.Parse(Console.ReadLine());
+            while (!int.TryParse(Console.ReadLine(), out age))
+            {
+                Console.WriteLine("That was not a number. I need a number. Please try again:");
+            }
 
             if (age >= 18) 
             { 
