@@ -28,17 +28,20 @@
         //Call the methods to test them in the Main method below
         static void Main(string[] args)
         {
+         
+            //counting from 1000 to -1000
             for (var i = 1000; i >= -1000; i--)
             {
                 Console.WriteLine(i);
             }
 
-
+            //counting by 3s from 3 to 999
             for (var i = 3; i < 1000; i += 3)
             { 
                 Console.WriteLine(i);
             }
 
+            //checking to see if the numbers are the same or different
             Console.WriteLine("Please give me an integer:");
             var num1 = int.Parse(Console.ReadLine());
             Console.WriteLine("Please give me a second integer:");
@@ -53,7 +56,39 @@
                 Console.WriteLine("Hmmm. Those are definitely two different numbers.");
             }
 
+            //Method to see if the numbers are even or odd
+            Console.WriteLine("Hello again! Please give me a number:");
+            var number = int.Parse(Console.ReadLine());
+            
+            if (number % 2 == 0)
+            {
+                Console.WriteLine($"Your number, {number} is an even number.");
+            }
+            else
+            {
+                Console.WriteLine($"Your number, {number} is an odd number.");
+            }
+
+            //Method to see if the numbers are positive or negative
+            Console.WriteLine("Let's play yet another number game! Please give me one more number:");
+            var num = int.Parse(Console.ReadLine());
+
+            if (num > 0)
+            {
+                Console.WriteLine($"Your number, {number} is positive.");
+            }
+            else if (num < 0)
+            {
+                Console.WriteLine($"Your number, {number} is negative.");
+            }
+            else
+            {
+                Console.WriteLine($"Your number must be 0, which is neither positive nor negative!");
+            }
 
         }
+
+
     }
 }
+
