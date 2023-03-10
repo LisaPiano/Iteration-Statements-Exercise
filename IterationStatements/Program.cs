@@ -31,13 +31,26 @@
             for (var i = 1000; i >= -1000; i--)
             {
                 Console.WriteLine(i);
-                Console.WriteLine("hi");
             }
 
 
             for (var i = 3; i < 1000; i += 3)
             { 
                 Console.WriteLine(i);
+            }
+
+            Console.WriteLine("Please give me an integer:");
+            var num1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Please give me a second integer:");
+            var num2 = int.Parse(Console.ReadLine());
+
+            if (num1 == num2)
+            {
+                Console.WriteLine("Cool! Those numbers are the same!");
+            }
+            else
+            {
+                Console.WriteLine("Hmmm. Those are definitely two different numbers.");
             }
 
 
