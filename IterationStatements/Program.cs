@@ -42,9 +42,14 @@
             }
 
             //checking to see if the numbers are the same or different
+
+            int num1;
             Console.WriteLine("Please give me an integer:");
-            var num1 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Please give me a second integer:");
+            while (!int.TryParse(Console.ReadLine(), out num1))
+            {
+                Console.WriteLine("That was not a number. I need a number. Please try again:");
+            }
+            Console.WriteLine("Thank you. Now, please give me a second integer:");
             var num2 = int.Parse(Console.ReadLine());
 
             if (num1 == num2)
@@ -75,15 +80,27 @@
 
             if (num > 0)
             {
-                Console.WriteLine($"Your number, {number} is positive.");
+                Console.WriteLine($"Your number, {num} is positive.");
             }
             else if (num < 0)
             {
-                Console.WriteLine($"Your number, {number} is negative.");
+                Console.WriteLine($"Your number, {num} is negative.");
             }
             else
             {
                 Console.WriteLine($"Your number must be 0, which is neither positive nor negative!");
+            }
+
+            Console.WriteLine("Well, now let's play another game. This game is called CAN YOU VOTE?? So....please enter your age right here:");
+            var age = int.Parse(Console.ReadLine());
+
+            if (age >= 18) 
+            { 
+            Console.WriteLine($"Well, since your age is {age} you can vote.");
+            }
+            else
+            {
+                Console.WriteLine($"Sorry, the age of {age} is just too young to vote.");
             }
 
         }
