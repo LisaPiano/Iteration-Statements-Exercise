@@ -117,18 +117,57 @@
             }
         }
 
-            //Hint: Use Parse or the safer TryParse() for an extra challenge
-            //Parse()
-            //TryParse()
+        //Hint: Use Parse or the safer TryParse() for an extra challenge
+        //Parse()
+        //TryParse()
 
-            //Heatin Up Section:
-            //Write a method to check if an integer(from the user) is in the range -10 to 10
+        //Heatin Up Section:
+        //Write a method to check if an integer(from the user) is in the range -10 to 10
 
-            //Write a method to display the multiplication table(from 1 to 12) of a given integer
+        public static void CheckRange()
+        {
+            int scope;
+            Console.WriteLine("Thank you so much for playing with me! Now, there are just two more games that I would like to try. Please give me a number, and I will tell you if it is on or between -10 and 10.");
+            while (!int.TryParse(Console.ReadLine(), out scope))
+            {
+                Console.WriteLine("That was not a number. I need a number. Please try again:");
+            }
+            if (scope >= -10 && scope <= 10)
+            {
+                Console.WriteLine($"Yes! The number you gave me, {scope} is indeed on or between -10 and 10! ");
+            }
+            else
+            {
+                Console.WriteLine($"Sorry. The number you gave me, {scope} is not on or between -10 and 10.");
+            }
+        }
+
+        //Write a method to display the multiplication table(from 1 to 12) of a given integer
+
+        public static void MultiplyTwelve()
+        {
+            int ints;
+            Console.WriteLine("This has been so fun! And now, I will perform my amazing trick! You shall witness my great ability to display the multiplication table of any given integer! Please, for one final time, provide me with a number from 1 to 12:");
+            while (!int.TryParse(Console.ReadLine(), out ints))
+            {
+                Console.WriteLine("That was not a number. I need a number. Please try again:");
+            }
+            while (ints < 1 || ints > 12)
+            {
+                Console.WriteLine("That number was out of my range! Please pick a number that is between 1 and 12:");
+                ints = int.Parse(Console.ReadLine());
+            }
+            for (int count = 0; count <= ints; count++)
+            {
+                Console.WriteLine(ints * count);
+            }
+            Console.WriteLine("Thank you for playing fun math games with me!");
 
 
-            //Call the methods to test them in the Main method below
-            static void Main(string[] args)
+        }
+
+        //Call the methods to test them in the Main method below
+        static void Main(string[] args)
         {
 
             //counting from 1000 to -1000
@@ -151,9 +190,14 @@
             //Method to see if the user can vote based on their age
             CanVote();
 
-        }
+            //Method to see if the user provides a number between -10 and 10
+            CheckRange();
 
-
+            //Method to display the multiplication table of a given integer
+            MultiplyTwelve();
+         }
+       }
     }
-}
+
+
 
