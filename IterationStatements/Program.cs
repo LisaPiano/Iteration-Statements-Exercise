@@ -152,18 +152,19 @@
             {
                 Console.WriteLine("That was not a number. I need a number. Please try again:");
             }
-            while (ints < 1 || ints > 12)
+            if (ints > 0 && ints < 13)
             {
-                Console.WriteLine("That number was out of my range! Please pick a number that is between 1 and 12:");
-                ints = int.Parse(Console.ReadLine());
+                for (int count = 0; count <= ints; count++)
+                {
+                    Console.WriteLine(ints * count);
+                }
+                Console.WriteLine("Thank you for playing fun math games with me!");
             }
-            for (int count = 0; count <= ints; count++)
+            else
             {
-                Console.WriteLine(ints * count);
+                Console.WriteLine("Oh no! You just didn't pick a number between 1 and 12! Now I can't show you my trick. Maybe next time?");
             }
-            Console.WriteLine("Thank you for playing fun math games with me!");
-
-
+            Console.WriteLine("Goodbye!");
         }
 
         //Call the methods to test them in the Main method below
